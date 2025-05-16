@@ -45,7 +45,28 @@
         .contact {
             margin-top: 20px;
         }
+
+    /* Hide mobile email icon on desktop */
+    .footer-email-left {
+        display: none;
+    }
+
+    /* Mobile view styles */
+    @media screen and (max-width: 768px) {
+        .footer-email-left {
+            display: block;
+            position: absolute;
+            left: 20px;
+            top: 10px;
+        }
+
+        /* Hide right-side icons on mobile */
+        .footer-icons-right {
+            display: none;
+        }
+    }
     </style>
+
 </head>
 <body>
     <header>
@@ -91,7 +112,16 @@
 
     <!-- Footer -->
     <footer style="display: flex; justify-content: center; align-items: center; background-color: rgba(34, 34, 34, 0.8); color: #fff; padding: 15px; position: relative; flex-direction: column;">
-    <div style="position: absolute; right: 20px;">
+    
+    <!-- Email icon on the left (only visible on mobile/tablet) -->
+    <div class="footer-email-left">
+        <a href="mailto:kunal@vigilanteye.live" target="_blank" style="color: #fff; text-decoration: none;">
+            <img src="media/email_icon.png" alt="Email" style="height: 20px; vertical-align: middle;">
+        </a>
+    </div>
+
+    <!-- Right-side icons (hidden on mobile/tablet) -->
+    <div class="footer-icons-right" style="position: absolute; right: 20px;">
         <a href="mailto:kunal@vigilanteye.live" target="_blank" style="margin-right: 10px; color: #fff; text-decoration: none;">
             <img src="media/email_icon.png" alt="Email" style="height: 20px; vertical-align: middle;">
         </a>
@@ -99,7 +129,7 @@
             <img src="media/linkedin_icon.png" alt="LinkedIn" style="height: 20px; vertical-align: middle;">
         </a>
     </div>
-    
+
     <div style="font-size: 14px;">
         &copy; 2025 Vigilant Eye. All Rights Reserved.
     </div>
@@ -108,6 +138,7 @@
         Building actively. Updated after pilot feedback – May 2025
     </div>
 </footer>
+
 
 </body>
 </html>
