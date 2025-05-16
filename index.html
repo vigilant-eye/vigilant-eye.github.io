@@ -45,27 +45,38 @@
         .contact {
             margin-top: 20px;
         }
-
-    /* Hide mobile email icon on desktop */
-    .footer-email-left {
+    </style>
+    <style>
+    /* Default (desktop): show both icons on right */
+    .footer-left-mobile {
         display: none;
     }
 
-    /* Mobile view styles */
+    .footer-right {
+        position: absolute;
+        right: 20px;
+        /* top: 10px; */
+    }
+
     @media screen and (max-width: 768px) {
-        .footer-email-left {
+        .footer-left-mobile {
             display: block;
             position: absolute;
             left: 20px;
-            top: 10px;
+            /* top: 10px; */
         }
 
-        /* Hide right-side icons on mobile */
-        .footer-icons-right {
+        .footer-right {
+            right: 20px;
+        }
+
+        /* Hide email on right side when in mobile */
+        .footer-right .email-icon {
             display: none;
         }
     }
     </style>
+
 
 </head>
 <body>
@@ -113,16 +124,16 @@
     <!-- Footer -->
     <footer style="display: flex; justify-content: center; align-items: center; background-color: rgba(34, 34, 34, 0.8); color: #fff; padding: 15px; position: relative; flex-direction: column;">
     
-    <!-- Email icon on the left (only visible on mobile/tablet) -->
-    <div class="footer-email-left">
+    <!-- Mobile-only email icon (left corner) -->
+    <div class="footer-left-mobile">
         <a href="mailto:kunal@vigilanteye.live" target="_blank" style="color: #fff; text-decoration: none;">
             <img src="media/email_icon.png" alt="Email" style="height: 20px; vertical-align: middle;">
         </a>
     </div>
 
-    <!-- Right-side icons (hidden on mobile/tablet) -->
-    <div class="footer-icons-right" style="position: absolute; right: 20px;">
-        <a href="mailto:kunal@vigilanteye.live" target="_blank" style="margin-right: 10px; color: #fff; text-decoration: none;">
+    <!-- Right-aligned icons for all views -->
+    <div class="footer-right">
+        <a href="mailto:kunal@vigilanteye.live" target="_blank" class="email-icon" style="margin-right: 10px; color: #fff; text-decoration: none;">
             <img src="media/email_icon.png" alt="Email" style="height: 20px; vertical-align: middle;">
         </a>
         <a href="https://www.linkedin.com/company/vigilant-eye-ai" target="_blank" style="color: #fff; text-decoration: none;">
@@ -130,14 +141,17 @@
         </a>
     </div>
 
+    <!-- Centered copyright -->
     <div style="font-size: 14px;">
         &copy; 2025 Vigilant Eye. All Rights Reserved.
     </div>
 
+    <!-- Subtle update note -->
     <div style="font-size: 10px; color: #999; margin-top: 5px; margin-bottom: 1px;">
         Building actively. Updated after pilot feedback – May 2025
     </div>
 </footer>
+
 
 
 </body>
